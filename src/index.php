@@ -52,7 +52,7 @@ if (isset($_FILES["file"])) {
     <br />
     <br />
     <h3 class="display-4 text-center">File upload workshop</h3>
-    <h4 class="display-4 text-center">Level 3</h4>
+    <h4 class="display-4 text-center">Level 2</h4>
     <p class="display-5 text-center">Goal: RCE me!</p>
 
     <br />
