@@ -4,6 +4,8 @@ FROM php:7.3-apache
 WORKDIR /var/www/html/
 COPY ./src .
 COPY docker-php.conf /etc/apache2/conf-available/docker-php.conf
+COPY apache2.conf /var/www/html/apache2.conf
+COPY apache2.conf /etc/apache2/apache2.conf
 
 # config permission
 RUN chown -R root:www-data /var/www/html
