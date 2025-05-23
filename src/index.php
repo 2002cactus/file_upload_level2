@@ -17,12 +17,12 @@ if (isset($_FILES["file"])) {
     try {
         $filename = $_FILES["file"]["name"];
         $filename_lower = strtolower($filename);
-
         $parts = explode('.', $filename_lower);
-
-        if (in_array("php", $parts)) {
+        $blacklist = ["php", "phtml", "phar"];
+        if (array_intersect($blacklist, $parts)) {
             die("Hack detected");
         }
+        
         $file = $dir . "/" . $filename;
         move_uploaded_file($_FILES["file"]["tmp_name"], $file);
         $success = 'Successfully uploaded file at: <a href="/' . $file . '">/' . $file . ' </a><br>';
